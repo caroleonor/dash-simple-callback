@@ -7,21 +7,25 @@ from collections import deque, Counter
 
 ########### Define your variables ######
 
-myheading1='Try out a palindrome here!'
-initial_value='A nut for a jar of tuna'
+myheading1='Try out a multiply'
+initial_value='1,2,3'
 longtext='''
         _Suggestions you might try:_
-        * A man, a plan, a canal: Panama!
-        * Go hang a salami I'm a lasanga hog
-        * God! Nate bit a Tibetan dog!
+        * 1,3,6,7
+        * 4,8,12
+        * 6,9,10
         '''
-tabtitle = 'racecar'
-sourceurl = 'https://www.grammarly.com/blog/16-surprisingly-funny-palindromes/'
-githublink = 'https://github.com/austinlasseter/dash-simple-callback'
+tabtitle = ''
+sourceurl = ''
+githublink = 'https://github.com/caroleonor/dash-simple-callback/edit/master/app.py'
 
 ########### Define a function for your callback:
-def my_function(letters):
-    return(letters[::-1])
+def multiply(list_number):
+    total =1
+    for x in list_number:
+        total*=x
+    return total
+
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
@@ -50,8 +54,8 @@ app.layout = html.Div(children=[
     [Input(component_id='my-id', component_property='value')]
 )
 def update_output_div(input_value):
-    palin=my_function(input_value)
-    return f"You've entered '{input_value}', and your output is '{palin}'"
+    a=multiply(input_value)
+    return f"You've entered '{input_value}', and your output is '{a}'"
 
 ############ Deploy
 if __name__ == '__main__':
